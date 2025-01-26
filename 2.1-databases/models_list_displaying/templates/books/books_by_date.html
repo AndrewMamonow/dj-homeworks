@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Каталог книг{% endblock %}
+{% block content %}
+    {% for book in books %}
+        <h2><a href = "/books/">{{ book.name }}</a> </h2>
+        <p>Автор: {{ book.author }}</p>
+        <p>Дата публикации: {{ book.pub_date|date:"Y.m.d" }}</p>
+    {% endfor %}
+
+    {% if previous_date %} 
+        <a href = "/books/{{ previous_date }}"> <buttom> {{ previous_date }} </buttom></a> 
+    {% endif %}
+
+    {% if next_date %} 
+        <a href = "/books/{{ next_date }}"> <buttom> {{ next_date }} </buttom></a> 
+    {% endif %}
+
+{% endblock %} 
+
+
