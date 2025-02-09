@@ -79,7 +79,7 @@ DATABASES = {
         'HOST': '127.0.0.1',
         'PORT': '5432',
         'USER': 'postgres',
-        'PASSWORD': '12qwaszx',
+        'PASSWORD': 'postgres',
         'OPTION': "-c client_encoding=utf8"
     }
 }
