@@ -36,4 +36,6 @@ class Scope(models.Model):
     is_main = models.BooleanField()
 
     class Meta:
+        verbose_name = 'Тег'
+        verbose_name_plural = 'Теги'
         ordering = ['-is_main', '-tag']

@@ -9,8 +9,10 @@ class ScopeInlineFormset(BaseInlineFormSet):
         list_of_true = []
         for form in self.forms:
             list_of_true.append(form.cleaned_data.get('is_main', None))
-        if list_of_true.count(True) > 1 or list_of_true.count(True) < 1:
+        if list_of_true.count(True) > 1:
             raise ValidationError('Главным может быть только один тег')
+        if list_of_true.count(True) < 1:
+            raise ValidationError('Вывберите один тег главным')        
             # В form.cleaned_data будет словарь с данными
             # каждой отдельной формы, которые вы можете проверить
             # form.cleaned_data
